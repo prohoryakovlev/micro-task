@@ -1,15 +1,32 @@
 import React from "react";
-import App from "../App";
 
 type NewComponentType = {
-    students: any
+    // students: Array<StudentType>
+    students: StudentType[]
 }
 
+type StudentType = {
+    id: number,
+    name: string,
+    age: number
+}
 
 
 const NewComponent = (props: NewComponentType) => {
     return (
-        <div>NewComponent</div>
+
+        <ul>
+            {props.students.map((ObjectFromStudentArray, index)=>{
+
+                return(
+                    <li key={ObjectFromStudentArray.id}>
+                        <span>{ObjectFromStudentArray.name}</span>
+                        <span> age: {ObjectFromStudentArray.age}</span>
+                        </li>
+                )
+            })}
+
+        </ul>
     )
 }
 
