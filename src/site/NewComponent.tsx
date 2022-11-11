@@ -4,15 +4,13 @@ type NewComponentType = {
     // students: Array<StudentType>
     students: StudentType[]
 }
-
 type StudentType = {
     id: number,
     name: string,
     age: number
 }
-
-
 const NewComponent = (props: NewComponentType) => {
+
     return (
 
         <ul>
